@@ -1,0 +1,239 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="M4Website.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/Css/style.css" rel="stylesheet" runat="server" />
+    <link href="Account/style.css" rel="stylesheet" />
+</head>
+ <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/11/01/07/20251101073828-MLTB985H.js" defer></script>
+    
+<script>
+    window.botpressWebChat.init({
+        botId: "YOUR-BOT-ID-HERE",
+        hostUrl: "https://files.bpcontent.cloud/2025/11/01/07/20251101073828-MLTB985H.js",
+        messagingUrl: "https://messaging.botpress.cloud",
+        clientId: "YOUR-CLIENT-ID-HERE",
+        webhookId: "YOUR-WEBHOOK-ID-HERE",
+        lazySocket: true,
+        themeName: "prism",
+        botName: "KwaMshana Helper",
+        avatarUrl: "https://your-logo-url.png",
+        stylesheet: "https://webchat-styler-css.botpress.app/prod/code/YOUR-STYLE-ID/v12345/style.css",
+        frontendVersion: "v1",
+        showPoweredBy: true,
+        theme: "prism",
+        themeColor: "#667eea",
+        allowedOrigins: []
+    });
+</script>
+<body class="bg-light">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <!-- Manual Bootstrap JS if bundles aren't working -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/js/bootstrap.min.js"></script>
+
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
+            <div class="container container-fluid">
+                <a class="navbar-brand" runat="server" href="~/">
+                    <img src="Img/473274523_586297030901336_8325680968642440168_n-removebg-preview-transformed.png" class="d-inline-block align-text-top brand" />
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/"><i class="fas fa-home"></i>Home</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownShop" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-store"></i>Shop
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownShop">
+                                <li><a class="dropdown-item" runat="server" href="~/DailyMeals.aspx">Daily Meals</a></li>
+                                <li><a class="dropdown-item" runat="server" href="~/Subscription.aspx">Subscription</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/About"><i class="fas fa-info-circle"></i>About</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/FAQs.aspx"><i class="fas fa-question-circle"></i>FAQs</a></li>
+                        <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact"><i class="fas fa-envelope"></i>Contact Us</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link position-relative" runat="server" href="~/Cart.aspx">
+                                <i class="fas fa-shopping-cart"></i>Cart
+                        <asp:Label ID="lblCartCount" runat="server"
+                            CssClass="badge badge-danger ml-1"
+                            Style="min-width: 20px; display: inline-block;">0</asp:Label>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right side authentication section -->
+                    <asp:LoginView ID="LoginView1" runat="server" ViewStateMode="Enabled">
+                        <AnonymousTemplate>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a runat="server" href="~/Account/Register" class="nav-link">
+                                        <i class="fas fa-user-plus"></i>Register
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a runat="server" href="~/Account/Login" class="nav-link">
+                                        <i class="fas fa-sign-in-alt"></i>Sign In
+                                    </a>
+                                </li>
+                            </ul>
+                        </AnonymousTemplate>
+
+                        <LoggedInTemplate>
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="userMenu"
+                                        role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-user-circle"></i>
+                                        <asp:LoginName ID="LoginName1" runat="server" FormatString="Welcome, {0}" />
+                                    </a>
+                                                                                                              
+                                        <a class="dropdown-item" runat="server" href="~/OrderTracking.aspx">
+                                            <i class="fas fa-calendar-check"></i>Track Order and Subscription
+                                        </a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" runat="server" href="~/Account/Logout">
+                                            <i class="fas fa-sign-out-alt"></i>Logout
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+
+                </div>
+            </div>
+</nav>
+
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+        <hr />
+        <footer class="site-footer">
+            <div class="footer-container">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <h3 class="footer-title">KwaMshana Café</h3>
+                    <p class="footer-text">Serving hearty meals & catering with authentic South African flavor.</p>
+                </div>
+
+                <!-- Links -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="About.aspx">About Us</a></li>
+                        <li><a href="/services.html">Services</a></li>
+                        <li><a href="Contact.aspx">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="footer-contact">
+                    <h4 class="footer-heading">Contact</h4>
+                    <p><i class="fas fa-phone"></i>064 504 6994</p>
+                    <p><i class="fas fa-envelope"></i>info@kwamshanacafe.co.za</p>
+                    <p><i class="fas fa-map-marker-alt"></i>277 Rick Turner Rd, Glenmore, Durban</p>
+                </div>
+
+                <!-- Social -->
+                <div class="footer-social">
+                    <h4 class="footer-heading">Follow Us</h4>
+                    <div class="footer-icons">
+                        <a href="https://www.linkedin.com/company/kwamshana-cafe" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/kwamshana.cafe?utm_source=ig_web_button_share_sheet&igsh=cXE2ZWl4Y2R3Y2dl" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@kwamshana.cafe?is_from_webapp=1&sender_device=pc" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Strip -->
+            <div class="footer-bottom">
+                <p>© 2025 KwaMshana Café. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </form>
+    <script src="CustomScripts/customScripts.js"></script>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/Scripts/bootstrap.js") %>
+    </asp:PlaceHolder>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
