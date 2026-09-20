@@ -63,7 +63,7 @@ namespace M4Website
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            //control nav bar using roles
+            
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetExpires(DateTime.UtcNow.AddMinutes(-1));
             Response.Cache.SetNoStore();

@@ -1,0 +1,55 @@
+## ASP.NET / Visual Studio ##
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# Visual Studio cache/options
+.vs/
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# NuGet packages
+packages/
+*.nupkg
+!packages/build/
+
+# Publish profiles / deployment
+PublishScripts/
+*.pubxml
+*.pubxml.user
+*.publishproj
+*.azurePubxml
+
+# Web Deploy / Web.config transforms (keep sample transforms, ignore generated ones)
+*.Publish.xml
+
+# ReSharper / other IDE junk
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# =========================
+# SECRETS — never commit real values
+# =========================
+# Keep Web.config in source control with PLACEHOLDER values only.
+# Real per-environment secrets go in Web.config.local (untracked) or environment variables.
+Web.config.local
+appsettings.local.json
+Properties/serviceDependencies.local.json
+*.pfx
+*.key
+*.env
+.env.local
+secrets.json

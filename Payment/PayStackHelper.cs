@@ -11,7 +11,7 @@ namespace M4Website.Payment
 {
     public class PayStackHelper
     {
-        // Test Keys (replace with live keys when going production)
+        // Test Keys
         public const string PUBLIC_KEY = "sk_test_b45f93a046bbc26980d1d4417d55a95b10e779e7";
         public const string SECRET_KEY = "sk_test_b45f93a046bbc26980d1d4417d55a95b10e779e7";
 
