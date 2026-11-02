@@ -1,0 +1,649 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    width: 100vw;
+}
+nav {
+    width: 100vw;
+    background-color: white;
+    box-shadow: 0 0 5px 0 rgba(100, 100, 100, 0.2);
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.nav-item{
+    margin-right:15px;
+}
+
+/* Background video */
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+.container-bg {
+    background-color:#F3F3F3;
+    width:100vw;
+    height:100vh;
+}
+/* Overlay to darken video */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* optional dark overlay */
+}
+
+/* Content */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    margin-top:-5%;
+}
+.hero-content h1 {
+    font-size: 4rem;
+   margin-bottom: 1rem;
+   font-weight:700;
+ }
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color:rgb(240,240,240);
+ }
+.brand{
+    display:flex;
+    flex-direction:row;
+    width:50%;
+}
+.hero-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem; /* spacing between buttons */
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.btn-primary {
+    color: white;
+    background-color: red;
+    box-shadow: 0px 0px 5px 0px rgba(182,0,0,0.4);
+    font-weight: 300;
+    border:none;
+}
+
+.btn-primary:hover {
+    background: #e85a2a;
+}
+
+.btn-secondary {
+    color: #fff;
+    border: 1px solid lightgray;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0px rgba(255,255,255,0.1);
+}
+
+.btn-secondary:hover {
+    color:white;
+    background-color:rgba(255,255,255,0.4);
+}
+.card-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+/* Section layout */
+.services {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa; /* light grey background */
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+.section-subtitle {
+    max-width: 700px;
+    margin: -1rem auto 3.5rem auto;
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.6;
+}
+/* Card container */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap; /* stack on smaller screens */
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* prevents image stretching */
+    display: block;
+}
+
+/* Card content */
+.card-content {
+    padding: 1.5rem;
+    text-align:left;
+
+}
+.card-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    text-align:left;
+}
+
+.card-content p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    text-align:left;
+}
+.card-link {
+    font-size:0.9rem;
+    display: inline-block;
+    font-weight: 600;
+    color: orangered;
+    text-decoration: none;
+    margin-top: auto; /* pushes link down if needed */
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: #FEA281; /* highlight color on hover */
+}
+.about-us {
+    padding: 80px 20px;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: black;
+    font-weight:700;
+}
+
+.about-text p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: black;
+    font-weight:200;
+}
+
+.about-cta {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: red;
+    transition: 0.3s ease;
+}
+
+.about-cta:hover {
+    text-decoration: underline;
+    color:orangered;
+}
+.about-bg {
+    background-color:orange;
+}
+.contact-bg {
+    background-color: rgb(30,30,30);
+}
+.contact {
+    padding: 80px 20px;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+
+.contact-info h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: lightgray;
+}
+
+.contact-info p {
+    margin-bottom: 20px;
+    color: gray;
+    line-height: 1.6;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: gray
+}
+
+.contact-socials a {
+    margin-right: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #e63946;
+    transition: all 0.3s ease;
+    margin: 0 10px;
+}
+
+.contact-socials a:hover {
+    text-decoration: underline;
+}
+
+.contact-map {
+    min-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.social-icon {
+    font-size: 2rem;
+}
+
+.social-icon:hover {
+    color: red;
+}
+.about-header {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),url('../img/lifeatkwamshana/snaptik_7429269054939991302_1.jpeg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+    height:300px;
+}
+
+.about-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+.section-title {
+    color: #2c3e50;
+    font-weight: 700;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+
+.about-subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Section titles */
+.section-title-hm {
+    font-size:2rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+}
+
+ /* Info card */
+.info-card {
+    background-color: #ffffff; /* solid white */
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color:dimgray;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+
+.info-icon {
+    font-size: 1.5rem;
+    color:dimgray;
+    margin-bottom: 15px;
+}
+
+.info-label {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.info-value {
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.highlight {
+    color: rgb(60,60,60);
+    font-weight: 600;
+}
+
+/* Map */
+.map-container {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Button */
+.contact-button {
+    background-color: indianred;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    margin-top: 15px;
+    display: inline-block;
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.contact-button:hover {
+    background-color: orangered;
+    color: white;
+}
+
+/* Mission / Values */
+.values-list {
+    list-style: none;
+    padding: 0;
+}
+
+.values-list li {
+    padding: 8px 0;
+    margin-bottom:10px;
+}
+
+/* Gallery Section */
+.about-gallery {
+    margin-top: 60px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    height: 220px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+.contact-section {
+    padding: 60px 20px;
+    background: #f5f5f5;
+}
+
+.section-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #555;
+}
+
+.contact-page {
+    background: #f5f5f5;
+    padding: 70px 20px;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.contact-title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-subtitle {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-box {
+    flex: 1;
+    background: #fff;
+    padding: 25px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.contact-icon {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contact-label {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.contact-text {
+    margin: 0;
+    color: #555;
+}
+
+.contact-map {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 768px) {
+    .contact-info {
+        flex-direction: column;
+    }
+}
+.site-footer {
+    color: #ddd;
+    padding: 50px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    color:dimgray;
+    line-height: 1.5;
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: dimgray;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: indianred;
+    border-bottom:1px solid indianred;
+}
+
+.footer-contact p {
+    margin: 8px 0;
+    font-size: 0.95rem;
+    color: dimgray;
+}
+
+.footer-contact i {
+    margin-right: 8px;
+    color: dimgray;
+}
+
+.footer-social .footer-icons a {
+    display: inline-block;
+    margin-right: 12px;
+    font-size: 1.4rem;
+    color: dimgray;
+    transition: color 0.3s;
+}
+
+.footer-social .footer-icons a:hover {
+    color: indianred;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 15px;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+/* Base link (optional) */
+nav a {
+    text-decoration: none;
+}
+
+    /* Stronger active rule — covers :link/:visited and wins against generic rules */
+nav a.active,
+nav a.active:link,
+nav a.active:visited,
+nav a.active:hover,
+nav a.active:focus {
+    color: orange !important;
+    display: inline-block; /* lets the border render cleanly */
+    font-weight:600;
+}
+
+/* If you have icons inside the link */
+nav a.active i {
+    color: inherit !important;
+}
+
